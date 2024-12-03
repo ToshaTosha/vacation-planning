@@ -10,6 +10,7 @@ import About from './pages/About';
 import Layout from './components/Layout.tsx';
 import Settings from '@/pages/Settings.tsx';
 import VacationSchedule from '@/pages/VacationSchedule';
+import UserProfile from '@/pages/UserProfile';
 
 const App = () => {
   const location = useLocation();
@@ -44,8 +45,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/employees" element={<Employees />} />
-        <Route path="/profile" element={<Profile />} />
         <Route path="/requests" element={<Requests />} /> */}
+        <Route path="/profile" element={<UserProfile />} />
         <Route path="/about" element={<About />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/schedule" element={<VacationSchedule />} />
