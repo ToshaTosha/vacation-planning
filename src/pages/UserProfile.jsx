@@ -79,7 +79,7 @@ const UserProfile = () => {
       )}
       <div className="flex justify-around mt-[50px]">
         <CommonButton text="Добавить отпуск" />
-        <CommonButton text="Добавить отпуск" />
+        <CommonButton text="Взять корректировку " />
       </div>
     </div>
   );
