@@ -10,6 +10,7 @@ import Settings from '@/pages/Settings.tsx';
 import VacationSchedule from '@/pages/VacationSchedule';
 import UserProfile from '@/pages/UserProfile';
 import EmployeeList from '@/pages/EmployeeList';
+import AddVacation from '@/pages/AddVacation';
 
 const App = () => {
   const location = useLocation();
@@ -35,6 +36,9 @@ const App = () => {
     case '/schedule':
       title = 'Графики отпусков';
       break;
+    case '/profile/add-vacation':
+      title = 'Мой профиль/Добавление отпуска';
+      break;
     default:
       title = 'Неизвестная страница';
   }
@@ -47,6 +51,7 @@ const App = () => {
         <Route path="/settings" element={<Settings />} />
         <Route path="/schedule" element={<VacationSchedule />} />
         <Route path="/employees" element={<EmployeeList />} />
+        <Route path="/profile/add-vacation" element={<AddVacation />} />
       </Routes>
     </Layout>
   );

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import CommonButton from '@/components/CommonButton';
+import { Link } from 'react-router-dom';
 
 const UserProfile = () => {
-  const [activeTab, setActiveTab] = useState('general'); // Состояние для активного таба
+  const [activeTab, setActiveTab] = useState('general');
 
   return (
     <div className="bg-white rounded-lg shadow px-[90px] py-[50px]">
@@ -78,7 +79,9 @@ const UserProfile = () => {
         </>
       )}
       <div className="flex justify-around mt-[50px]">
-        <CommonButton text="Добавить отпуск" />
+        <Link to="/profile/add-vacation" className="hover:text-gray-400">
+          <CommonButton text="Добавить отпуск" />
+        </Link>
         <CommonButton text="Взять корректировку " />
       </div>
     </div>
