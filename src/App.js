@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import Layout from './components/Layout.tsx';
+import Settings from '@/pages/Settings.tsx'
 
-function App() {
+const App = () => {
+  const location = useLocation();
+  let title = '';
+
+  // Определяем заголовок в зависимости от текущего маршрута
+  switch (location.pathname) {
+    case '/':
+      title = 'График отпусков';
+      break;
+    case '/employees':
+      title = 'Сотрудники';
+      break;
+    case '/profile':
+      title = 'Мой профиль';
+      break;
+    case '/requests':
+      title = 'Заявки';
+      break;
+      case '/settings':
+        title = 'Настройки';
+        break;
+    default:
+      title = 'Неизвестная страница';
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout title={title}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/employees" element={<Employees />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/requests" element={<Requests />} /> */}
+        <Route path="/about" element={<About />} />
+        <Route path="/settings" element={<Settings />} />
+      </Routes>
+    </Layout>
   );
-}
+};
 
-export default App;
+const AppWrapper = () => (
+  <Router>
+    <App />
+  </Router>
+);
+
+export default AppWrapper;
