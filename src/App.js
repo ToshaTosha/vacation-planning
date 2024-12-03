@@ -1,9 +1,15 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+} from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Layout from './components/Layout.tsx';
-import Settings from '@/pages/Settings.tsx'
+import Settings from '@/pages/Settings.tsx';
+import VacationSchedule from '@/pages/VacationSchedule';
 
 const App = () => {
   const location = useLocation();
@@ -23,9 +29,12 @@ const App = () => {
     case '/requests':
       title = 'Заявки';
       break;
-      case '/settings':
-        title = 'Настройки';
-        break;
+    case '/settings':
+      title = 'Настройки';
+      break;
+    case '/schedule':
+      title = 'Графики отпусков';
+      break;
     default:
       title = 'Неизвестная страница';
   }
@@ -39,6 +48,7 @@ const App = () => {
         <Route path="/requests" element={<Requests />} /> */}
         <Route path="/about" element={<About />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/schedule" element={<VacationSchedule />} />
       </Routes>
     </Layout>
   );

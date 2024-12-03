@@ -53,9 +53,7 @@ const Layout = ({ children, title }: LayoutProps) => {
         </header>
 
         {/* Основной контент */}
-        <div className="bg-white rounded-lg shadow px-[90px] py-[50px]">
-          {children}
-        </div>
+        {children}
       </div>
     </div>
   );
