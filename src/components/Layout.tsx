@@ -36,7 +36,7 @@ const Layout = ({ children, title }: LayoutProps) => {
               </Link>
             </li>
             <li className="mb-4">
-              <Link to="/requests" className="hover:text-gray-400">
+              <Link to="/applications" className="hover:text-gray-400">
                 Заявки
               </Link>
             </li>

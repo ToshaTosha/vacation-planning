@@ -11,6 +11,7 @@ import VacationSchedule from '@/pages/VacationSchedule';
 import UserProfile from '@/pages/UserProfile';
 import EmployeeList from '@/pages/EmployeeList';
 import AddVacation from '@/pages/AddVacation';
+import Applications from '@/pages/Applications';
 
 const App = () => {
   const location = useLocation();
@@ -27,7 +28,7 @@ const App = () => {
     case '/profile':
       title = 'Мой профиль';
       break;
-    case '/requests':
+    case '/applications':
       title = 'Заявки';
       break;
     case '/settings':
@@ -46,11 +47,11 @@ const App = () => {
   return (
     <Layout title={title}>
       <Routes>
-        {/* <Route path="/employees" element={<Employees />} /> */}
         <Route path="/profile" element={<UserProfile />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/schedule" element={<VacationSchedule />} />
         <Route path="/employees" element={<EmployeeList />} />
+        <Route path="/applications" element={<Applications />} />
         <Route path="/profile/add-vacation" element={<AddVacation />} />
       </Routes>
     </Layout>
